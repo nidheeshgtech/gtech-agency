@@ -1,0 +1,212 @@
+/* Hero - full screen */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rem 4rem 4rem;
+  position: relative;
+  overflow: hidden;
+  background: var(--black);
+}
+
+/* Subtle dark radial bg */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 65% 20%, #0d0d1f 0%, #0a0a0a 65%);
+  z-index: 0;
+}
+
+/* Very subtle grid lines */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(54, 57, 149, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(54, 57, 149, 0.07) 1px, transparent 1px);
+  background-size: 80px 80px;
+  z-index: 1;
+}
+
+/* Top row */
+.hero-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 0.8s 0.2s forwards;
+}
+
+/* Small label - red */
+.hero-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+/* Availability badge */
+.hero-available {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245, 242, 238, 0.35);
+}
+
+/* Large watermark - blue tint */
+.hero-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(8rem, 18vw, 20rem);
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(54, 57, 149, 0.1);
+  white-space: nowrap;
+  z-index: 1;
+  user-select: none;
+  letter-spacing: 0.1em;
+}
+
+/* Main content block */
+.hero-content {
+  z-index: 2;
+  position: relative;
+}
+
+/* Big headline */
+.hero-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 7.5vw, 8rem);
+  line-height: 1.02;
+  font-weight: 700;
+  max-width: 1000px;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s 0.4s forwards;
+}
+
+/* Italic red word */
+.hero-headline em {
+  font-style: italic;
+  color: var(--red);
+  text-decoration: underline;
+  text-decoration-color: rgba(207, 46, 46, 0.3);
+  text-underline-offset: 8px;
+}
+
+/* Bottom row - sub + buttons side by side */
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0;
+  animation: fadeIn 0.8s 0.9s forwards;
+}
+
+/* Subtitle */
+.hero-sub {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(245, 242, 238, 0.5);
+  max-width: 420px;
+}
+
+/* Button group */
+.hero-actions {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Primary button - red */
+.btn-primary {
+  background: var(--red);
+  color: var(--white);
+  padding: 0.9rem 2rem;
+  border-radius: 2px;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: #b02020;
+  transform: translateY(-2px);
+}
+
+/* Ghost button - blue border */
+.btn-ghost {
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.9rem 2rem;
+  border: 1px solid var(--blue);
+  border-radius: 2px;
+  transition: background 0.3s, color 0.3s;
+  white-space: nowrap;
+}
+
+.btn-ghost:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+
+/* Scroll indicator */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 4rem;
+  right: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeIn 1s 1.2s forwards;
+}
+
+.hero-scroll-indicator span {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(245, 242, 238, 0.25);
+  writing-mode: vertical-rl;
+}
+
+/* Animated scroll line - red */
+.scroll-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--red), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50%       { opacity: 1;   transform: scaleY(1.15); }
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
