@@ -198,3 +198,52 @@
 @keyframes fadeIn {
   to { opacity: 1; }
 }
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 120px 24px 48px;
+  }
+
+  /* hide the "available for projects" text on mobile */
+  .hero-available {
+    display: none;
+  }
+
+  /* bigger headline on small screens */
+  .hero-headline {
+    font-size: 48px;
+    margin-bottom: 32px;
+  }
+
+  /* stack subtitle and buttons vertically */
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .hero-sub {
+    max-width: 100%;
+    font-size: 15px;
+  }
+
+  /* stack buttons on top of each other */
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* hide scroll indicator on mobile */
+  .hero-scroll-indicator {
+    display: none;
+  }
+
+}
