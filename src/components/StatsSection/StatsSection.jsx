@@ -11,7 +11,7 @@ function StatsSection() {
   return (
     <section className="stats-section">
 
-      {/* Left text */}
+     
       <div className="stats-intro">
         <p className="stats-label">By The Numbers</p>
         <h2 className="stats-heading">
@@ -19,7 +19,7 @@ function StatsSection() {
         </h2>
       </div>
 
-      {/* Stats grid */}
+      
       <div className="stats-grid">
         {stats.map((stat) => (
           <div className="stat-item" key={stat.label}>

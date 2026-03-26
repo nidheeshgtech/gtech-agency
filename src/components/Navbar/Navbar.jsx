@@ -1,26 +1,40 @@
 import './Navbar.css'
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
+
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+    })
   }, [])
 
+  let navClass = 'navbar'
+  if (scrolled) {
+    navClass = 'navbar scrolled'
+  }
+
   return (
-    <nav className={scrolled ? 'navbar scrolled' : 'navbar'}>
+    <nav className={navClass}>
+
       <a href="#" className="navbar-logo">GTECH</a>
 
       <ul className="navbar-links">
-        <li><a href="#services">Services</a></li>
+        <li><Link to="/services">Services</Link></li>
         <li><a href="#projects">Work</a></li>
+        <li><Link to="/portfolio">Portfolio</Link></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
       <a href="#contact" className="nav-cta">Start a Project</a>
+
     </nav>
   )
 }

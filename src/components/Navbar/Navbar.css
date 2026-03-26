@@ -1,15 +1,18 @@
 .navbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 4rem;
+  padding: 24px 60px;
   background: transparent;
   transition: background 0.4s;
 }
 
+/* background shows up when user scrolls */
 .navbar.scrolled {
   background: rgba(10, 10, 10, 0.92);
   backdrop-filter: blur(12px);
@@ -17,40 +20,41 @@
 
 .navbar-logo {
   font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  letter-spacing: 0.02em;
-  color: var(--white);
+  font-size: 22px;
+  color: #f5f2ee;
   text-decoration: none;
 }
 
 .navbar-links {
   display: flex;
-  gap: 2.5rem;
+  gap: 40px;
   list-style: none;
 }
 
 .navbar-links a {
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
+  font-size: 13px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--white);
+  color: #f5f2ee;
   text-decoration: none;
   opacity: 0.7;
-  transition: opacity 0.3s;
 }
 
-.navbar-links a:hover { opacity: 1; }
+.navbar-links a:hover {
+  opacity: 1;
+}
 
 .nav-cta {
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
+  font-size: 13px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--white);
-  background: var(--blue);
-  padding: 0.65rem 1.5rem;
+  color: white;
+  background: #363995;
+  padding: 10px 22px;
   border-radius: 2px;
   text-decoration: none;
-  transition: background 0.3s;
 }
 
-.nav-cta:hover { background: var(--red); }
+.nav-cta:hover {
+  background: #CF2E2E;
+}

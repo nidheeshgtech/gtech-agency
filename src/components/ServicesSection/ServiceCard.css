@@ -3,64 +3,64 @@
   grid-template-columns: 60px 1fr 2fr auto auto;
   align-items: center;
   gap: 2rem;
-  padding: 2rem 1rem 2rem 2rem;
+  padding: 30px 16px 30px 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   border-left: 2px solid transparent;
   cursor: pointer;
-  transition: border-color 0.3s, background 0.3s;
+  transition: all 0.3s;
 }
 
 .service-row:hover {
-  border-left-color: var(--red);
+  border-left-color: #CF2E2E;
   background: rgba(207, 46, 46, 0.03);
 }
 
 .service-row-num {
-  font-size: 0.72rem;
+  font-size: 11px;
   letter-spacing: 0.15em;
-  color: var(--blue);
+  color: #363995;
   opacity: 0.7;
 }
 
 .service-row-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
+  font-size: 22px;
   font-weight: 400;
-  color: var(--white);
+  color: #f5f2ee;
   white-space: nowrap;
 }
 
 .service-row-desc {
-  font-size: 0.88rem;
+  font-size: 14px;
   line-height: 1.7;
   color: rgba(245, 242, 238, 0.4);
 }
 
 .service-row-tags {
   display: flex;
-  gap: 0.5rem;
+  gap: 8px;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
 
 .service-tag {
-  font-size: 0.68rem;
+  font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--blue);
+  color: #363995;
   border: 1px solid rgba(54, 57, 149, 0.35);
-  padding: 0.3rem 0.7rem;
+  padding: 4px 10px;
   border-radius: 2px;
 }
 
 .service-row-arrow {
-  font-size: 1.2rem;
+  font-size: 18px;
   color: rgba(245, 242, 238, 0.15);
   transition: color 0.3s, transform 0.3s;
 }
 
 .service-row:hover .service-row-arrow {
-  color: var(--red);
+  color: #CF2E2E;
   transform: translate(3px, -3px);
 }
 
@@ -68,9 +68,15 @@
   .service-row {
     grid-template-columns: 40px 1fr auto;
     grid-template-rows: auto auto;
-    row-gap: 0.5rem;
+    row-gap: 8px;
   }
 
-  .service-row-desc { grid-column: 2; grid-row: 2; }
-  .service-row-tags { display: none; }
+  .service-row-desc {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .service-row-tags {
+    display: none;
+  }
 }

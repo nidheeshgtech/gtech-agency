@@ -1,16 +1,20 @@
-import Navbar from './components/Navbar'
-import HeroSection from './components/HeroSection'
-import Marquee from './components/Marquee'
-import StatsSection from './components/StatsSection'
-import ServicesSection from './components/ServicesSection'
-import ProjectsSection from './components/ProjectsSection'
-import ContactForm from './components/ContactForm'
-import Footer from './components/Footer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-function App() {
+import Navbar from './components/Navbar/Navbar'
+import HeroSection from './components/HeroSection/HeroSection'
+import Marquee from './components/Marquee/Marquee'
+import StatsSection from './components/StatsSection/StatsSection'
+import ServicesSection from './components/ServicesSection/ServicesSection'
+import ProjectsSection from './components/ProjectsSection/ProjectsSection'
+import ContactForm from './components/ContactForm/ContactForm'
+import Footer from './components/Footer/Footer'
+import Portfolio from './pages/Portfolio'
+import Services from './pages/Services'
+
+
+function Home() {
   return (
     <div>
-      <Navbar />
       <HeroSection />
       <Marquee />
       <StatsSection />
@@ -19,6 +23,20 @@ function App() {
       <ContactForm />
       <Footer />
     </div>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/services" element={<Services />} />
+
+      </Routes>
+    </BrowserRouter>
   )
 }
 
